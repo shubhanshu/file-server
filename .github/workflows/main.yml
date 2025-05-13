@@ -2,6 +2,19 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
+  oidc_debug_claims:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Debug OIDC Claims
+        uses: github/actions-oidc-debugger@main
+        with:
+          audience: '5a8ac58d-9557-497a-8832-90bd35e641bf'
+
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     env:
