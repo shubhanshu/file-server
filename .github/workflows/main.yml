@@ -17,6 +17,9 @@ jobs:
 
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     env:
       DATABRICKS_HOST: https://auth-ap-northeast-1.cloud.databricks.com/
       DATABRICKS_CLIENT_ID: df61c752-2dc8-4d30-b3f1-d6b35895cd67
